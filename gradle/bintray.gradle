@@ -1,0 +1,16 @@
+// Handles publication of distributions to Bintray
+
+apply plugin: 'bintray'
+
+bintray {
+    user = bintrayUsername
+    key = bintrayKey
+    publications = ['mavenJava']
+    pkg {
+        repo = 'jcenter'
+        name = 'gradle-raml-plugin'
+        desc = 'Validate your RAML documentation, and publish it as HTML.'
+        licenses = ['Apache-2.0']
+        labels = []
+    }
+}
