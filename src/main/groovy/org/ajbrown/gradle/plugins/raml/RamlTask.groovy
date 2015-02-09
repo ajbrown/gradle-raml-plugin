@@ -1,4 +1,4 @@
-package com.haximusprime
+package org.ajbrown.gradle.plugins.raml
 
 import org.gradle.api.internal.AbstractTask
 import org.gradle.api.tasks.TaskAction
@@ -11,6 +11,7 @@ class RamlTask extends AbstractTask {
 
     @TaskAction
     void exec() {
+
     }
 
 }

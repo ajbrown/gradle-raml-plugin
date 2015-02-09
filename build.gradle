@@ -15,16 +15,45 @@ buildscript {
     }
 }
 
+repositories {
+    jcenter()
+    maven { url 'https://repository.mulesoft.org/nexus/content/groups/public' }
+}
+
 dependencies {
     compile localGroovy()
     compile gradleApi()
+    compile ( 'org.raml:raml-parser:0.9-SNAPSHOT' ) {
+        exclude module: 'slf4j-api'
+        exclude module: 'slf4j-log4j12'
+    }
 }
 
-group='com.haximusprime'
-version='0.0.0'
+group='org.ajbrown'
+version='0.0.0-SNAPSHOT'
+
+ext {
+    artifactId = 'gradle-raml-plugin'
+    defaultEncoding = 'UTF-8'
+}
+
+defaultTasks 'clean', 'build'
+
 
 task release {
     description = "Releases a version of the plugin on Artifactory and Bintray"
     dependsOn artifactoryPublish, bintrayUpload
+}
+
+test {
+    testLogging {
+        displayGranularity 2
+        events "passed", "skipped", "failed", "standardError"
+    }
+}.doFirst {
+
+    // We have to remove snakeyaml from the classpath, since gradle core pulls it in and prefers it over our declared
+    // and transitive dependencies.  See http://bit.ly/1DcCC6g
+    classpath = classpath.filter { !it.name.contains("snakeyaml-1.6") }
 }
 

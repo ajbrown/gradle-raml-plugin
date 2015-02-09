@@ -21,22 +21,19 @@ publishing {
 
             pom.withXml {
                 def Node root = asNode()
-                /*
 
-                        UNCOMMENT THIS BLOCK IF YOU WANT TO CUSTOMIZE THE GENERATED pom.xml FILE
-
-                root.appendNode('name', 'Gradle Plugin for Antlr4')
-                root.appendNode('description', 'Gradle plugin for generating grammars with Antlr4')
-                root.appendNode('url', 'https://github.com/melix/antlr4-gradle-plugin')
+                root.appendNode('name', 'gradle-raml-plugin')
+                root.appendNode('description', 'Gradle plugin which can validate your RAML, and turn it into HTML')
+                root.appendNode('url', 'https://github.com/ajbrown/gradle-raml-plugin')
 
                 def issues = root.appendNode( 'issueManagement' )
                 issues.appendNode( 'system', 'github' )
-                issues.appendNode( 'url', 'https://github.com/melix/antlr4-gradle-plugin/issues' )
+                issues.appendNode( 'url', 'https://github.com/ajbrown/gradle-raml-plugin/issues' )
 
                 def scm = root.appendNode( 'scm' )
-                scm.appendNode( 'url', 'https://github.com/melix/antlr4-gradle-plugin' )
-                scm.appendNode( 'connection', 'scm:git:https://github.com/melix/antlr4-gradle-plugin.git' )
-                scm.appendNode( 'developerConnection', 'scm:git:git@github.com:melix/antlr4-gradle-plugin.git' )
+                scm.appendNode( 'url', 'https://github.com/ajbrown/gradle-raml-plugin' )
+                scm.appendNode( 'connection', 'scm:git:https://github.com/ajbrown/gradle-raml-plugin.git' )
+                scm.appendNode( 'developerConnection', 'scm:git:git@github.com:ajbrown/gradle-raml-plugin.git' )
 
                 def license = root.appendNode( 'licenses' ).appendNode( 'license' );
                 license.appendNode( 'name', 'The Apache Software License, Version 2.0' )
@@ -44,12 +41,11 @@ publishing {
                 license.appendNode( 'distribution', 'repo' )
 
                 def dev = root.appendNode( 'developers' ).appendNode( 'developer' );
-                dev.appendNode( 'id', 'melix' )
-                dev.appendNode( 'name', 'Cédric Champeau' )
-                dev.appendNode( 'organization', 'Groovy' )
-                dev.appendNode( 'organizationUrl', 'http://groovy.codehaus.org' )
+                dev.appendNode( 'id', '@adrianjbrown' )
+                dev.appendNode( 'name', 'A.J. Brown' )
+                dev.appendNode( 'email', 'aj@ajbrown.org' )
+                dev.appendNode( 'url', 'http://ajbrown.org' )
 
-                 */
             }
         }
     }
