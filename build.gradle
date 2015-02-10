@@ -4,6 +4,7 @@ apply from: 'gradle/compile.gradle'
 apply from: 'gradle/publishing.gradle'
 apply from: 'gradle/bintray.gradle'
 apply from: 'gradle/artifactory.gradle'
+apply from: 'gradle/ci.gradle'
 
 buildscript {
     repositories {
@@ -12,6 +13,7 @@ buildscript {
     dependencies {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:0.3'
         classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:2.2.4'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.1'
     }
 }
 
