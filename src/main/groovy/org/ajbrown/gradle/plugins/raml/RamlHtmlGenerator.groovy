@@ -11,7 +11,7 @@ import org.raml.model.Raml
 
 /**
  *
- * @author A.J. Brown <aj.brown@mheducation.com>
+ * @author A.J. Brown <aj@ajbrown.org>
  */
 @Slf4j
 class RamlHtmlGenerator {

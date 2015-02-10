@@ -10,7 +10,7 @@ import static org.junit.Assert.*
 
 /**
  *
- * @author A.J. Brown <aj.brown@mheducation.com>
+ * @author A.J. Brown <aj@ajbrown.org>
  */
 class RamlGenerateHtmlTaskTest {
 

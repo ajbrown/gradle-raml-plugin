@@ -1,38 +1,12 @@
-Gradle Plugin Project template
+Gradle RAML Plugin
 ------------------------------
 
-You've just created a basic Gradle plugin project
+Validate your [RAML](http://raml.org/docs.html) documentation, and turn it into HTML.
 
-The project's structure is laid out as follows
 
-    <proj>
-      |
-      +- src
-          |
-          +- main
-              |
-              +- groovy
-              |
-                 // plugin sources
-              |
-              +- resources
-              |
-                 // plugin resources
-          +- test
-              |
-              +- groovy
-              |
-                 // plugin tests
+### Credits
 
-Execute the following command to compile and package the project
+The first iteration of HTML generation uses Handlebars templates originally authored by [Kevin Renskers' raml2html](https://github.com/kevinrenskers/raml2html/blob/master/lib/template.handlebars)
+.  If it was not for this leading example, this plugin would not have gotten such a leap in development speed.
 
-    ./gradlew build
-
-Execute the following command to deploy to Artifactory
-
-    ./gradlew artifactoryPublish
-
-Execute the following command to deploy to Bintray
-
-    ./gradlew bintrayUpload
 

@@ -8,7 +8,7 @@ import org.raml.parser.visitor.RamlDocumentBuilder
 
 /**
  *
- * @author A.J. Brown <aj.brown@mheducation.com>
+ * @author A.J. Brown <aj@ajbrown.org>
  */
 class RamlGenerateHtmlTask extends DefaultTask {
 
