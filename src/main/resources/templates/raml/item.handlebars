@@ -1,0 +1,32 @@
+<li>
+    {{#if this.displayName}}
+        <strong>{{this.displayName}}</strong>:
+    {{else}}
+        <strong>{{@key}}</strong>:
+    {{/if}}
+
+    <em>
+        {{#if this.required}}required{{/if}}
+        {{#if this.enum}}
+            (one of {{this.enum}}{{#if this.default}} - default: {{this.default}}{{/if}})
+        {{else}}
+            ({{this.type}}{{#if this.default}} - default: {{this.default}}{{/if}})
+        {{/if}}
+    </em>
+
+    {{md description}}
+
+    {{#if this.schema}}
+        <p><strong>Schema</strong>:</p>
+        <pre><code>{{this.schema}}</code></pre>
+    {{/if}}
+
+    {{#if this.example}}
+        <p><strong>Example</strong>:</p>
+        {{#ifTypeIsString}}
+            <pre>{{this.example}}</pre>
+        {{else}}
+            <pre><code>{{this.example}}</code></pre>
+        {{/ifTypeIsString}}
+    {{/if}}
+</li>

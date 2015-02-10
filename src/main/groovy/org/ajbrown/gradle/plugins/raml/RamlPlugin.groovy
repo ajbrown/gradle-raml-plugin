@@ -10,7 +10,8 @@ class RamlPlugin implements Plugin<Project> {
 
     void apply(Project project) {
 
-        project.extensions.create "raml", RamlExtension
+        def ext = project.extensions.create "raml", RamlExtension, project
+        ext.htmlDestination = project.buildDir.path + "/raml.html"
 
         project.task('raml', type:RamlTask)
 
@@ -18,5 +19,11 @@ class RamlPlugin implements Plugin<Project> {
         def validationTask = project.tasks.create( 'ramlValidate', RamlValidateTask )
         validationTask.description = 'Validates RAML documentation'
         validationTask.group = 'Documentation'
+
+        //Add the html generation task
+        def htmlTask = project.tasks.create( 'ramlGenerateHtml', RamlGenerateHtmlTask )
+        htmlTask.description = 'Generate HTML from RAML documentation'
+        htmlTask.group = 'Documentation'
+        htmlTask.dependsOn validationTask
     }
 }

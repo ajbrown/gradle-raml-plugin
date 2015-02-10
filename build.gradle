@@ -27,6 +27,8 @@ dependencies {
         exclude module: 'slf4j-api'
         exclude module: 'slf4j-log4j12'
     }
+    compile 'com.github.jknack:handlebars:2.0.0'
+    compile 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.0'
 }
 
 group='org.ajbrown'

@@ -13,5 +13,7 @@ class RamlPluginTest {
 
         assert project.tasks.findByName('raml') instanceof RamlTask
         assert project.tasks.findByName('ramlValidate') instanceof RamlValidateTask
+        assert project.tasks.findByName('ramlGenerateHtml') instanceof RamlGenerateHtmlTask
     }
+
 }
